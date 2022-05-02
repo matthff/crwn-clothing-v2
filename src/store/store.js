@@ -1,13 +1,20 @@
-//I'm only using the legacy_createStore for learning purposes in the moment, but it's recommended to
-// switch for the configureStore later in the project from the Redux Toolkit(RTK)!
-
-import { compose, legacy_createStore as createStore, applyMiddleware } from "redux";
+import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 
-import { rootReducer } from "./root-reducer";
+import userReducer from './user/user.slice.js';
+import categoriesReducer from './categories/categories.slice.js';
 
-const middleWares = [logger];
 
-const composedEnhancers = compose(applyMiddleware(...middleWares));
-
-export const store = createStore(rootReducer, undefined, composedEnhancers);
+export const store = configureStore({
+    reducer: {
+        user: userReducer,
+        categories: categoriesReducer
+    },
+    middleware: getDefaultMiddleware => getDefaultMiddleware({
+        serializableCheck: {
+            ignoredActions: ['user/currentUser'],
+            ignoredActionPaths: ['payload'],
+            ignoredPaths: ['user.currentUser']
+        },
+    }).concat(logger),
+});
