@@ -3,12 +3,14 @@ import logger from 'redux-logger';
 
 import userReducer from './user/user.slice.js';
 import categoriesReducer from './categories/categories.slice.js';
+import cartReducer from './cart/cart.slice.js';
 
 
 export const store = configureStore({
     reducer: {
         user: userReducer,
-        categories: categoriesReducer
+        categories: categoriesReducer,
+        cart: cartReducer
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware({
         serializableCheck: {

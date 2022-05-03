@@ -2,7 +2,7 @@ import { useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
-import { selectCategories } from '../../store/categories/categories.selector.js'; 
+import { selectCategoriesArray } from '../../store/categories/categories.selector.js'; 
 
 import ProductCard from '../../components/product-card/product-card.component.jsx';
 
@@ -14,7 +14,7 @@ import {
 
 const Category = () => {
     const { category } = useParams();
-    const categories = useSelector(selectCategories);
+    const categories = useSelector(selectCategoriesArray);
     const [products, setProducts] = useState(categories[category]);
   
     useEffect(() => {

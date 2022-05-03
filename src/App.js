@@ -7,7 +7,6 @@ import {
     onAuthStateChangedListener 
 } from './utils/firebase/firebase.utils.js';
 
-//import { setCurrentUser } from "./store/user/user.action.js";
 import { setCurrentUser } from "./store/user/user.slice.js";
 
 import Navigation from "./routes/navigation/navigation.component.jsx";
