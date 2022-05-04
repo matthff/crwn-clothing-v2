@@ -42,6 +42,7 @@ const store = configureStore({
             ignoredPaths: ['user.currentUser']
         },
     }).concat(middleWares),
+    devTools: process.env.NODE_ENV !== 'production',
 });
 
 export default store;
