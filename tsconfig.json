@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "outDir": "./dist/",        // path to output directory
+        "sourceMap": true,          // allow sourcemap support
+        "strictNullChecks": true,   // enable strict null checks as a best practice
+        "module": "esnext",         // specify module code generation
+        "moduleResolution": "node",
+        "jsx": "react-jsx",         // use typescript to transpile jsx to js
+        "target": "es5",            // specify ECMAScript target version
+        "allowJs": true,            // allow a partial TypeScript and JavaScript codebase
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+
+    },
+    "include": [
+        "./src/",
+        "./src/custom.d.ts"
+    ]
+}
